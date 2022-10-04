@@ -18,13 +18,30 @@ class ViewController: UIViewController {
         
         let topLabel = makeLabel(withText: "top")
         let bottomLabel = makeLabel(withText: "bottom")
+        let leadingLabel = makeLabel(withText: "leading")
+        let traillingLabel = makeLabel(withText: "trailling")
+        
         
         view.addSubview(topLabel)
         view.addSubview(bottomLabel)
+        view.addSubview(leadingLabel)
+        view.addSubview(traillingLabel)
         
-        topLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        topLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        
+        NSLayoutConstraint.activate([
+            
+            topLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            topLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            bottomLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -8),
+            bottomLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            leadingLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            leadingLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            traillingLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+            traillingLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            
+        ])
         
     }
     
